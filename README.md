@@ -10,7 +10,7 @@ El departamento comercial necesita saber qué tarifa es más rentable para ajust
 
 ## 📊 Datos
 
-- **Fuente:** caso de estudio del programa de Ciencia de Datos de [TripleTen](https://tripleten.com/) (datos proporcionados por el curso, no incluidos en el repo).
+- **Fuente:** caso de estudio del programa de Ciencia de Datos de TripleTen (datos proporcionados por el curso, no incluidos en el repo).
 - **Contenido:** 5 tablas (`users`, `calls`, `messages`, `internet`, `plans`) con datos de 500 clientes en 2018.
 - **Análisis final:** 2,293 registros usuario-mes (1,573 de Surf y 720 de Ultimate).
 
@@ -20,6 +20,12 @@ El departamento comercial necesita saber qué tarifa es más rentable para ajust
 2. **Facturación:** cálculo del ingreso mensual por usuario según las reglas de cobro (pago base + excedentes). Cada llamada se redondea hacia arriba y el Internet se suma por mes antes de redondear a GB.
 3. **Análisis exploratorio:** comparación por tarifa de minutos, llamadas, mensajes y GB.
 4. **Pruebas de hipótesis:** t de Welch (α = 0.05) para comparar ingresos entre tarifas y entre regiones.
+
+## 📐 Reglas de facturación
+
+- Cada llamada se redondea hacia arriba al minuto completo.
+- Las sesiones de Internet no se redondean; el total mensual se redondea hacia arriba a GB (1 GB = 1,024 MB).
+- Ingreso mensual = pago base del plan + excedentes de minutos, mensajes y GB × su tarifa extra.
 
 ## ✅ Resultados clave
 
@@ -67,3 +73,7 @@ jupyter notebook notebooks/analisis_tarifas_megaline.ipynb
 ```
 
 Se necesitan los CSV del curso en `data/` (ver [data/README.md](data/README.md)). El notebook se ejecutó con pandas 1.x; con pandas 2.0 o superior los formatos de fecha del código darán error, por eso `requirements.txt` lo limita.
+
+## 🛠️ Herramientas
+
+Python · Pandas · NumPy · SciPy · Matplotlib · Seaborn · Jupyter
